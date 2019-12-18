@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Sistema Escola',
 
-    'title_prefix' => '',
+    'title_prefix' => 'Sis',
 
-    'title_postfix' => '',
+    'title_postfix' => 'School',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Sistema</b>Escola',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>S</b>E',
 
     /*
     |--------------------------------------------------------------------------
@@ -132,18 +132,25 @@ return [
             'text' => 'search',
             'search' => true,
         ],
-        ['header' => 'main_navigation'],
+        ['header' => 'Administrador'],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Secretaria',
             'icon'        => 'far fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'submenu'     => [
+                [
+                    'text'  => 'Professores',
+                    'url'   => 'admin/professores',
+                ],
+                [
+                    'text'  => 'Alunos',
+                    'url'   => 'admin/alunos',
+                ]
+            ]
         ],
         ['header' => 'account_settings'],
         [
