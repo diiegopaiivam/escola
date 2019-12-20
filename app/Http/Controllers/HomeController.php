@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\Professor;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,5 +26,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function professores(){
+        $professores = DB::table('professor')->get();
+        //$professores = auth()->user()->
+        return view('admin/professores', compact ('professores'));
     }
 }

@@ -15,9 +15,9 @@ return [
 
     'title' => 'Sistema Escola',
 
-    'title_prefix' => 'Sis',
+    'title_prefix' => '',
 
-    'title_postfix' => 'School',
+    'title_postfix' => '',
 
     /*
     |--------------------------------------------------------------------------

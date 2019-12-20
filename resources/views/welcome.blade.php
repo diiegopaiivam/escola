@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="public/css/style.css" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -60,6 +61,13 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            }
+            
+            .card-img-top {
+                max-width: 250px;
+                display: block;
+                margin: auto;
+                padding: 2px;
             }
         </style>
     </head>
