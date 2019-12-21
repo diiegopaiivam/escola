@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use app\Models\Professor;
 use Illuminate\Support\Facades\DB;
+use app\Http\Requests\ProfessoresRequest;
 
 class HomeController extends Controller
 {
@@ -36,5 +37,9 @@ class HomeController extends Controller
 
     public function cadastroProfessores(){
         return view ('admin/professoresCadastro');
+    }
+
+    public function storeProfessores(ProfessoresRequest $request){
+
     }
 }

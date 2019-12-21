@@ -16,7 +16,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="card-form">
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('professores.cadastro') }}" method="POST" enctype="multipart/form-data">
                 {!! csrf_field() !!}
                 <div class="form-group">
                     <label for="Name">Seu Nome Completo</label>
