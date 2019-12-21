@@ -1,9 +1,32 @@
-.container {
+.row {
     max-width: 250px;
-    display: block;
+    display: inline-table;
     margin: auto;
     padding: 2px;
 }
+
+.card {
+    width: max-content;
+    background-color:white;
+    padding: 4px;
+    box-shadow: 5px 10px 5px #888888;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 9pt;
+}
+
+.card-img-top {
+    max-width: 250px;
+}
+
+.card-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13pt; 
+}
+
+.botoes {
+    position: absolute;
+}
+
 
 html, body {
     background-color: #fff;

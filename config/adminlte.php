@@ -262,6 +262,7 @@ return [
                     'asset' => false,
                     'location' => '//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js',
                 ],
+                
                 [
                     'type' => 'css',
                     'asset' => false,

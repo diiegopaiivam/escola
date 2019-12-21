@@ -33,4 +33,8 @@ class HomeController extends Controller
         //$professores = auth()->user()->
         return view('admin/professores', compact ('professores'));
     }
+
+    public function cadastroProfessores(){
+        return view ('admin/professoresCadastro');
+    }
 }
