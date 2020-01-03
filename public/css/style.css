@@ -27,6 +27,13 @@
     position: absolute;
 }
 
+.panel-body {
+    padding:20px;
+}
+
+.form-group {
+    padding: 5px;
+}
 
 html, body {
     background-color: #fff;

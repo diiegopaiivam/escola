@@ -2739,6 +2739,7 @@ textarea.form-control {
 }
 .form-group {
   margin-bottom: 15px;
+  padding: 4px;
 }
 .radio,
 .checkbox {
@@ -5533,6 +5534,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
+
 }
 .panel-heading {
   padding: 10px 15px;

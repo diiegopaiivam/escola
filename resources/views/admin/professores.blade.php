@@ -26,8 +26,8 @@
                         <h5 class="card-title"><strong>{{$professor->name}}</strong></h5>
                         <p class="card-text">{{$professor->phone1}} - {{$professor->phone2}}</p>
                         <p class="card-text">{{$professor->email}}</p>
-                        <a href="professores/cadastro" class="button btn btn-success">Editar </a>
-                        <a href="/admin/professor/<?php echo $professor->id?>" class="button btn btn-danger">Excluir</a>
+                        <a href="/admin/professores/editprofessor/<?php echo $professor->id?>" class="button btn btn-success">Editar </a>
+                        <a href="/admin/professores/<?php echo $professor->id?>" class="button btn btn-danger">Excluir</a>
                     </div>
                 </div>
             </div>

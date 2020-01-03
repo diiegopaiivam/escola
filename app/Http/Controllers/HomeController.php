@@ -73,6 +73,27 @@ class HomeController extends Controller
 
     }
 
+    public function editProfessor($id){
+        $professor = Professor::findOrFail($id);
+ 
+        if($professor) {
+            return view('admin/editprofessor', compact('professor'));
+            
+        } else {
+            return redirect()->back();
+        }
+    
+    }
+
+    public function updateProfessor(Request $request, Professor $professor, $id){
+        
+        $professor = Professor::where('id', $id)->update($request->except('_token', '_method'));
+    
+        if ($professor) {
+            return redirect()->route('admin/professores');
+        }
+    }
+
     public function deleteProfessor($id){
         $professor = Professor::where('id', $id)->delete();
        
