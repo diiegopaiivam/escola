@@ -152,11 +152,11 @@ return [
                 ]
             ]
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Operacional'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Eventos',
+            'url'  => 'admin/eventos',
+            'icon' => 'fas fa-angle-double-right',
         ],
         [
             'text' => 'change_password',

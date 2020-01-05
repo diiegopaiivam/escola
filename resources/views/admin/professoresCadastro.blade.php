@@ -31,6 +31,10 @@
                     <input type="email" name="email" class="form-control" id="email" placeholder="Seu Email">
                 </div>
                 <div class="form-group">
+                    <label for="Disciplina">Disciplina</label>
+                    <input type="name" name="disciplina" class="form-control" id="disciplina" placeholder="Disciplina">
+                </div>
+                <div class="form-group">
                     <label for="phone1">Celular</label>
                     <input type="tel" name="phone1"  class="form-control" id="phone1" placeholder="Celular">
                 </div>
@@ -42,7 +46,7 @@
                     <label for="image">Imagem:</label>
                     <input type="file" name="image" placeholder="imagem" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary" style="margin: 26px; width:160px;">Salvar</button>
+                <button type="submit" class="btn btn-primary" style="margin: 30px; width:63px;">Salvar</button>
             </form>
         </div>
     </div>

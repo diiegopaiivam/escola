@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Professor;
+use App\Models\Eventos;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ProfessoresRequest;
 
@@ -29,6 +30,8 @@ class HomeController extends Controller
         return view('home');
     }
 
+    //métodos relacionados aos professores
+
     public function professores(){
         $professores = DB::table('professor')->get();
         //$professores = auth()->user()->
@@ -38,15 +41,15 @@ class HomeController extends Controller
     public function cadastroProfessores(){
         return view ('admin/professoresCadastro');
     }
-
+    //método que cadastra professores
     public function storeProfessores(Request $request, Professor $professor){
         
-        $professor = new Professor;
+        $professor = new Professor; 
 
         $data = $request->all();
         $professorName = $data['name'];
 
-        if($request->hasFile('image') && $request->file('image')->isValid()) {
+        if($request->hasFile('image') && $request->file('image')->isValid()) { //verifica se tem imagem cadastrada, se não ele salva com o nome do professor
             
             $extension = $request->image->extension();
             $nameFile = "{$professorName}.{$extension}";
@@ -63,7 +66,8 @@ class HomeController extends Controller
         $professor->image           = $upload;
         $professor->phone1          = $request->phone1;
         $professor->phone2          = $request->phone2;
-        $professor->save();
+        $professor->disciplina      = $request->disciplina;
+        $professor->save(); //salva o professor
        
         if($professor->save()){
             return redirect()->route('admin/professores')->with('success','Sucesso ao atualizar o perfil');
@@ -72,7 +76,7 @@ class HomeController extends Controller
         //return view ('site.profile.profile');
 
     }
-
+    // abre a edição de professor
     public function editProfessor($id){
         $professor = Professor::findOrFail($id);
  
@@ -84,7 +88,7 @@ class HomeController extends Controller
         }
     
     }
-
+    //conclui a edição de professor
     public function updateProfessor(Request $request, Professor $professor, $id){
         
         $professor = Professor::where('id', $id)->update($request->except('_token', '_method'));
@@ -93,12 +97,39 @@ class HomeController extends Controller
             return redirect()->route('admin/professores');
         }
     }
-
+    // deletar o professor com o id selecionado.
     public function deleteProfessor($id){
         $professor = Professor::where('id', $id)->delete();
        
         if($professor) {
             return redirect()->route('admin/professores');
         }
+    }
+
+    // Métodos para Eventos
+
+    public function getEventos(){
+        $eventos = DB::table('eventos')->get();
+        return view('admin/eventos/eventos', compact ('eventos'));
+    }
+
+    public function cadastroEventos(){
+        return view('admin/eventos/eventosCadastro');
+    }
+
+    public function storeEventos(Request $request, Eventos $eventos){
+        $eventos = new Eventos; 
+
+        $data = $request->all();
+
+        $eventos->title         = $request->title;
+        $eventos->body          = $request->body;
+        $eventos->date          = $request->date;
+        $eventos->save(); //salva o evento
+
+        if($eventos->save()){
+            return redirect()->route('admin/eventos')->with('success','Evento cadastrado');
+        }
+        return redirect()->back()->with('error','Falha ao cadastrar evento');
     }
 }
